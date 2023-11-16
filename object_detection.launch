@@ -1,0 +1,7 @@
+<launch>
+  <node name="object_detection" pkg="fetch_motion" type="object_detection.py" output="screen">
+    <!-- Add any required parameters here -->
+    <!-- Example: <param name="param_name" value="param_value" /> -->
+  </node>
+</launch>
+

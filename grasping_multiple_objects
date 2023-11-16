@@ -1,0 +1,48 @@
+class FetchRobot:
+
+    def __init__(self):
+        # Initialize ROS node
+        rospy.init_node('fetch_robot', anonymous=True)
+
+        # Initialize other components (visual servoing, grasping, etc.)
+
+        # List of objects to grasp
+        self.objects_to_grasp = [{'name': 'object_1', 'position': [x, y, z], 'grasped': False},
+                                 # ... other objects
+                                ]
+
+    def select_next_object(self):
+        # Implement your logic to select the next object to grasp
+        # For example, you could select the first object in the list that has not been grasped yet
+        for obj in self.objects_to_grasp:
+            if not obj['grasped']:
+                return obj
+        return None
+
+    def update_object_status(self, object_name):
+        # Update the status of the object to indicate it has been grasped
+        for obj in self.objects_to_grasp:
+            if obj['name'] == object_name:
+                obj['grasped'] = True
+                break
+
+    def run(self):
+        while not rospy.is_shutdown():
+            # Select the next object to grasp
+            target_object = self.select_next_object()
+
+            if target_object is not None:
+                print("Targeting object:", target_object['name'])
+                # Implement logic to visually servo to the object and grasp it
+                # ...
+
+                # After grasping
+                self.update_object_status(target_object['name'])
+            else:
+                print("All objects have been grasped")
+                break
+
+if __name__ == '__main__':
+    robot = FetchRobot()
+    robot.run()
+

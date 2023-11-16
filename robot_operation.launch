@@ -1,0 +1,14 @@
+<launch>
+    <!-- Object Detection Node -->
+    <node name="pose_estimator" pkg="fetch_motion" type="pose_estimator.py" output="screen">
+        <!-- Add any parameters if needed -->
+    </node>
+
+    <!-- Robot Mover Node -->
+    <node name="robot_mover" pkg="fetch_motion" type="robot_mover.py" output="screen">
+        <!-- Add any parameters if needed -->
+    </node>
+
+
+</launch>
+

@@ -1,0 +1,14 @@
+<launch>
+  <!-- Launch object detection -->
+  <include file="$(find fetch_motion)/launch/object_detection.launch" />
+
+  <!-- Launch grasp planning -->
+  <include file="$(find fetch_motion)/launch/grasp_planning.launch" />
+
+  <!-- Launch visual servoing -->
+  <include file="$(find fetch_motion)/launch/visual_servoing.launch" />
+
+  <!-- Launch motion control -->
+  <include file="$(find fetch_motion)/launch/motion_control.launch" />
+</launch>
+

@@ -1,0 +1,6 @@
+<launch>
+  <node name="visual_servoing" pkg="fetch_motion" type="visual_servoing.py" output="screen">
+    <!-- Add any required parameters here -->
+  </node>
+</launch>
+

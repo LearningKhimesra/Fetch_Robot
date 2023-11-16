@@ -1,0 +1,6 @@
+<launch>
+  <node name="grasp_planning" pkg="fetch_motion" type="grasp_planning.py" output="screen">
+    <!-- Add any required parameters here -->
+  </node>
+</launch>
+
